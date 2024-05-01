@@ -9,31 +9,31 @@ public class ContactController {
     UserService service = new UserService();
 
     public void create() {
-        ContactCreateView view = new ContactCreateView();
+        UserCreateView view = new UserCreateView();
         view.getOutput(service.create(view.getData()));
         AppStarter.startApp();
     }
 
     public void read() {
-        ContactReadView view = new ContactReadView();
+        UserReadView view = new UserReadView();
         view.getOutput(service.read());
         AppStarter.startApp();
     }
 
     public void update() {
-        ContactUpdateView view = new ContactUpdateView();
+        UserUpdateView view = new UserUpdateView();
         view.getOutput(service.update(view.getData()));
         AppStarter.startApp();
     }
 
     public void delete() {
-        ContactDeleteView view = new ContactDeleteView();
+        UserDeleteView view = new UserDeleteView();
         view.getOutput(service.delete(view.getData()));
         AppStarter.startApp();
     }
 
     public void readById() {
-        ContactReadByIdView view = new ContactReadByIdView();
+        UserReadByIdView view = new UserReadByIdView();
         view.getOutput(service.readById(view.getData()));
         AppStarter.startApp();
     }

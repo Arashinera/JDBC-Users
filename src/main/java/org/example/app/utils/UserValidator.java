@@ -3,9 +3,9 @@ package org.example.app.utils;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ContactValidator {
+public class UserValidator {
 
-    public Map<String, String> validateContactData(Map<String, String> data) {
+    public Map<String, String> validateUserData(Map<String, String> data) {
 
         Map<String, String> errors = new HashMap<>();
 

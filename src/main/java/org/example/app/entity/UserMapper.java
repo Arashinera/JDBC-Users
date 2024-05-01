@@ -2,7 +2,7 @@ package org.example.app.entity;
 
 import java.util.Map;
 
-public class ContactMapper {
+public class UserMapper {
 
     public User mapData(Map<String, String> data) {
         User user = new User();

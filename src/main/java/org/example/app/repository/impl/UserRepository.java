@@ -22,11 +22,11 @@ public class UserRepository implements AppRepository<User> {
         String sql = "INSERT INTO " + TABLE_USERS +
                 " (userName, email) VALUES(?, ?)";
 
-        try (PreparedStatement pstmt = DBConn.connect().prepareStatement(sql)) {
+        try (PreparedStatement statement = DBConn.connect().prepareStatement(sql)) {
 
-            pstmt.setString(1, user.getUserName());
-            pstmt.setString(2, user.getEmail());
-            pstmt.executeUpdate();
+            statement.setString(1, user.getUserName());
+            statement.setString(2, user.getEmail());
+            statement.executeUpdate();
 
             return Constants.DATA_INSERT_MSG;
         } catch (SQLException exception) {

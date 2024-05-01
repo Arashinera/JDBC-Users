@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class ContactDeleteView {
+public class UserDeleteView {
     public Map<String, String> getData() {
         System.out.println("\nDELETE FORM");
         Map<String, String> map = new HashMap<>();

@@ -4,8 +4,8 @@ import org.example.app.entity.User;
 import org.example.app.exceptions.UserException;
 import org.example.app.repository.impl.UserRepository;
 import org.example.app.utils.Constants;
-import org.example.app.entity.ContactMapper;
-import org.example.app.utils.ContactValidator;
+import org.example.app.entity.UserMapper;
+import org.example.app.utils.UserValidator;
 
 import java.util.List;
 import java.util.Map;
@@ -18,7 +18,7 @@ public class UserService {
 
     public String create(Map<String, String> data) {
         Map<String, String> errors =
-                new ContactValidator().validateContactData(data);
+                new UserValidator().validateUserData(data);
         if (!errors.isEmpty()) {
             try {
                 throw new UserException("Check inputs", errors);
@@ -26,7 +26,7 @@ public class UserService {
                 return exception.getErrors(errors);
             }
         }
-        return repository.create(new ContactMapper().mapData(data));
+        return repository.create(new UserMapper().mapData(data));
     }
 
     public String read() {
@@ -50,7 +50,7 @@ public class UserService {
 
     public String update(Map<String, String> data) {
         Map<String, String> errors =
-                new ContactValidator().validateContactData(data);
+                new UserValidator().validateUserData(data);
         if (!errors.isEmpty()) {
             try {
                 throw new UserException("Check inputs", errors);
@@ -59,12 +59,12 @@ public class UserService {
             }
         }
 
-        return repository.update(new ContactMapper().mapData(data));
+        return repository.update(new UserMapper().mapData(data));
     }
 
     public String delete(Map<String, String> data) {
         Map<String, String> errors =
-                new ContactValidator().validateContactData(data);
+                new UserValidator().validateUserData(data);
         if (!errors.isEmpty()) {
             try {
                 throw new UserException("Check inputs", errors);
@@ -73,12 +73,12 @@ public class UserService {
             }
         }
 
-        return repository.delete(new ContactMapper().mapData(data).getId());
+        return repository.delete(new UserMapper().mapData(data).getId());
     }
 
     public String readById(Map<String, String> data) {
         Map<String, String> errors =
-                new ContactValidator().validateContactData(data);
+                new UserValidator().validateUserData(data);
         if (!errors.isEmpty()) {
             try {
                 throw new UserException("Check inputs", errors);

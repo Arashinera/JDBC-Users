@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class ContactReadByIdView {
+public class UserReadByIdView {
     public Map<String, String> getData() {
         System.out.println("\nREAD BY ID FORM");
         Scanner input = new Scanner(System.in);
